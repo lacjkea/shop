@@ -1,28 +1,34 @@
+/* CATEGORIES */
 body {
   background-color: antiquewhite;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
 }
 ol {
   list-style-type: none;
 }
 h1 {
   text-align: center;
-  margin-bottom: 0;
-  grid-column-start: 1;
-  grid-column-end: 6;
-  grid-row-start: 1;
+  grid-column: 1/-1;
+  margin-bottom: 0.5vw;
+  border: solid 5px grey;
+  padding: 1vw;
 }
 nav {
   display: flex;
   justify-content: space-around;
   grid-row-start: 2;
-  margin-left: 50px;
+  grid-column: 1/-1;
+  text-align: left;
+  margin-bottom: 0.5vw;
+  border: solid 1px black;
+  padding: 0.5vw;
 }
-main {
-  grid-row-start: 3;
-}
+
 .group {
   padding: 50px;
   margin: 50px;
@@ -34,14 +40,93 @@ main {
   width: 50%;
 }
 
-nav a:link{text-decoration:none;}
+nav a:link {
+  text-decoration: none;
+}
 
-a:link{color:black;
+a:link {
+  color: black;
   text-decoration: underline;
-font-size:1.5vw}
-  a:hover, :active {color:black;
-  text-decoration:none;
-font-size:2vw;}
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+a:hover,
+:active {
+  color: black;
+  text-decoration: none;
+  font-size: 2vw;
+  font-weight: 500;
+}
 
-a:visited - a link the user has visited
-a:active - a link the moment it is clicked
+/* LIST */
+
+main.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+.product,
+.onSale,
+.soldOut {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  order: 1;
+}
+h3 {
+  order: 2;
+  font-size: 1.5vw;
+  text-align: center;
+  padding-bottom: 2px;
+}
+.label {
+  order: 3;
+}
+.price {
+  order: 4;
+}
+.discounted {
+  order: 5;
+  font-weight: 900;
+  background-color: orange;
+  margin: 0.5px;
+  max-width: 30%;
+}
+.salesticker {
+  background-color: white;
+  border: orange solid;
+  border-radius: 0px 50px 50px 0px;
+  color: orange;
+  font-size: 1.8vw;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+  position: absolute;
+  padding: 5px 7px;
+}
+.infobox {
+  border: hotpink 2px dashed;
+  order: 3;
+}
+.soldout {
+  order: 5;
+  font-weight: 900;
+  background-color: rgb(241, 89, 89);
+  margin: 0.5px;
+  max-width: 30%;
+}
+.soldoutsticker {
+  background-color: white;
+  border: rgb(241, 89, 89) solid;
+  border-radius: 0px 50px 50px 0px;
+  color: rgb(241, 89, 89);
+  font-size: 1.8vw;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+  position: absolute;
+  padding: 5px 7px;
+}
