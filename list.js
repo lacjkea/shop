@@ -1,4 +1,7 @@
-const url = "https://kea-alt-del.dk/t7/api/products";
+const urlParams = new URLSearchParams(window.location.search);
+const subcat = urlParams.get("subcategory");
+const url = "https://kea-alt-del.dk/t7/api/products?subcategory=" + subcat;
+
 
 fetch(url)
     .then(function (res) {
@@ -23,7 +26,7 @@ function showProduct(product) {
 
 
 
-    // 3.changge the content 
+    // 3.change the content 
     clone.querySelector("a").setAttribute("href", "product.html?id=" + product.id);
     clone.querySelector(".label").textContent = `${product.articletype} | ${product.brandname}`;
     clone.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/1000/${product.id}.webp`;
@@ -31,11 +34,11 @@ function showProduct(product) {
     clone.querySelector("h3").textContent = `${product.productdisplayname}`;
     clone.querySelector(".price span").textContent = `${product.price}`;
 
-    // soldOut onSale
-
+    // soldOut 
     if (product.soldout) {
         clone.querySelector("article").classList.add("soldOut");
     }
+    // onSale
     if (product.discount) {
         clone.querySelector("article").classList.add("onSale");
         console.log(clone);
@@ -49,16 +52,3 @@ function showProduct(product) {
     // 5.append 
     parent.appendChild(clone);
 }
-
-
-
-
-/* <article class="inStock">
-<a href="product.html"><img href="index.html" src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
-<div class="infobox">
-
-    <span>Originally</span>DKK 1595,-</p>
-    <div class="discounted">
-        Now DKK 1560,-</div>
-</div>
-</article> */
