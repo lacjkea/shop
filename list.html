@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.9" />
     <title>Products By Brand</title>
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>APPAREL ADDICTS</h1>
     <nav>
-        <a class="women" href="#">WOMEN</a>
-        <a class="men" href="#">MEN</a>
-        <a class="unisex" href="#">UNISEX</a>
+      <a class="women" href="#">WOMEN</a>
+      <a class="men" href="#">MEN</a>
+      <a class="unisex" href="#">UNISEX</a>
     </nav>
     <main class="list">
-        <template id="inStocktemplate">
-            <article class="inStock">
-                <h3>Sahara Team India Fanwear Round Neck Jersey</h3>
-                <a href="product.html?id=1163"><img href="index.html"
-                        src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp"
-                        alt="Sahara Team India Fanwear Round Neck Jersey" /></a>
-                <div class="infobox">
+      <template id="inStocktemplate">
+        <article class="inStock" data-content="$$$">
+          <!-- lacj -->
+          <h3>Sahara Team India Fanwear Round Neck Jersey</h3>
+          <a href="product.html?id=1163"
+            ><img
+              href="index.html"
+              src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp"
+              alt="Sahara Team India Fanwear Round Neck Jersey"
+          /></a>
+          <div class="infobox">
+            <p class="label">Tshirts | Nike</p>
+            <div class="price">WAS <span>1595</span>- Dkk</div>
+            <div class="discounted">NOW <span>1560</span>- Dkk</div>
+          </div>
+        </article>
+      </template>
 
-                    <p class="label">Tshirts | Nike</p>
-                    <div class="price">WAS <span>1595</span>- Dkk</div>
-                    <div class="discounted">
-                        NOW <span>1560</span>- Dkk</div>
-                </div>
-            </article>
-        </template>
-
-        <!-- <article class="inStock onSale">
+      <!-- <article class="inStock onSale">
             <a href="product.html"> <img href="product.html" src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp"
                     alt="Blue T20" /></a>
             <h3>Blue T20 Indian Cricket Jersey</h3>
@@ -45,7 +46,7 @@
             </div>
         </article> -->
 
-        <!-- <article class=" inStock soldOut">
+      <!-- <article class=" inStock soldOut">
             <a href="product.html"><img src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp"
                     alt="Blue T20 Indian Cricket Jersey" /></a>
 
@@ -83,10 +84,8 @@
             </div>
             </div>
         </article> -->
-
     </main>
 
     <script src="list.js"></script>
-</body>
-
+  </body>
 </html>

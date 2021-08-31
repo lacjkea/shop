@@ -100,7 +100,7 @@ h3 {
 }
 
 .list article.onSale::before {
-  content: "10";
+  content: attr(data-content); /*lacj*/
   background-color: white;
   border: orange solid;
   border-radius: 0px 50px 50px 0px;
