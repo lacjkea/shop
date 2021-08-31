@@ -14,7 +14,7 @@ function showList(data) {
 }
 
 function showProduct(product) {
-    console.log(product);
+    // console.log(product);
     // 1.grab the template
     const template = document.querySelector("#inStocktemplate").content;
 
@@ -34,12 +34,11 @@ function showProduct(product) {
     }
     if (product.discount) {
         clone.querySelector("article").classList.add("onSale");
+        console.log(clone);
+        clone.querySelector(".onSale", "::before").setAttribute("content", product.discount);
 
     }
     clone.querySelector(".discounted span").textContent = ((product.discount / 100) * product.price);
-
-    // clone.querySelector(".onSale").content = `${product.discount}`;
-
 
     // 4.grab the parent
     const parent = document.querySelector("main");

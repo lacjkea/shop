@@ -65,13 +65,21 @@ main.list {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
 }
-.inStock,
-.onSale,
-.soldOut {
+.list article {
   display: flex;
   flex-direction: column;
 }
-
+.discounted {
+  order: 5;
+  font-weight: 900;
+  background-color: orange;
+  font-size: 1.6vw;
+  margin: 0.5px;
+  max-width: 30%;
+}
+.list.discounted {
+  display: none;
+}
 img {
   display: block;
   max-width: 100%;
@@ -90,14 +98,9 @@ h3 {
 .price {
   order: 4;
 }
-.discounted {
-  order: 5;
-  font-weight: 900;
-  background-color: orange;
-  margin: 0.5px;
-  max-width: 30%;
-}
-.salesticker {
+
+.list article.onSale::before {
+  content: "10";
   background-color: white;
   border: orange solid;
   border-radius: 0px 50px 50px 0px;
@@ -107,6 +110,8 @@ h3 {
   letter-spacing: 1.8px;
   position: absolute;
   padding: 5px 7px;
+  z-index: 2;
+  margin: 30px 5px 0px 0px;
 }
 .infobox {
   border: hotpink 2px dashed;
@@ -116,10 +121,12 @@ h3 {
   order: 5;
   font-weight: 900;
   background-color: rgb(241, 89, 89);
-  margin: 0.5px;
+  margin-bottom: 0.5px;
   max-width: 30%;
 }
-.soldoutsticker {
+.list article.soldOut::before {
+  content: "SOLD OUT";
+  position: absolute;
   background-color: white;
   border: rgb(241, 89, 89) solid;
   border-radius: 0px 50px 50px 0px;
@@ -127,8 +134,20 @@ h3 {
   font-size: 1.8vw;
   font-weight: 900;
   letter-spacing: 1.8px;
-  position: absolute;
   padding: 5px 7px;
+  z-index: 2;
+  margin: 80px 5px 0px 0px;
+}
+.list article.soldOut img {
+  opacity: 0.5;
+}
+.list article .discounted,
+.list article .price span {
+  display: none;
+}
+.list article.onSale .discounted,
+.list article.onSale .price span {
+  display: initial;
 }
 main.product {
   display: grid;
@@ -136,10 +155,10 @@ main.product {
   gap: 2rem;
 }
 
-#firstimage {
+.firstimage {
   order: 1;
 }
-#secondimage {
+.secondimage {
   order: 2;
 }
 section.info {
