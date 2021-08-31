@@ -14,13 +14,17 @@ function showList(data) {
 }
 
 function showProduct(product) {
-    // console.log(product);
+    console.log(product);
     // 1.grab the template
     const template = document.querySelector("#inStocktemplate").content;
 
     // 2.clone it 
     const clone = template.cloneNode(true);
+
+
+
     // 3.changge the content 
+    clone.querySelector("a").setAttribute("href", "product.html?id=" + product.id);
     clone.querySelector(".label").textContent = `${product.articletype} | ${product.brandname}`;
     clone.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/1000/${product.id}.webp`;
     clone.querySelector("img").alt = `${product.productdisplayname}`;
